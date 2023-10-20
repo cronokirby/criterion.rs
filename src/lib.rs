@@ -524,7 +524,7 @@ impl<M: Measurement> Criterion<M> {
     ///
     /// Panics if n < 10
     pub fn sample_size(mut self, n: usize) -> Criterion<M> {
-        assert!(n >= 10);
+        //assert!(n >= 10);
 
         self.config.sample_size = n;
         self
@@ -1173,7 +1173,7 @@ https://bheisler.github.io/criterion.rs/book/faq.html
     ///     // Now we can perform benchmarks with this group
     ///     group.bench_function("Bench 1", |b| b.iter(|| 1 ));
     ///     group.bench_function("Bench 2", |b| b.iter(|| 2 ));
-    ///    
+    ///
     ///     group.finish();
     /// }
     /// criterion_group!(benches, bench_simple);

@@ -26,7 +26,7 @@ use std::time::Duration;
 ///     // Now we can perform benchmarks with this group
 ///     group.bench_function("Bench 1", |b| b.iter(|| 1 ));
 ///     group.bench_function("Bench 2", |b| b.iter(|| 2 ));
-///    
+///
 ///     // It's recommended to call group.finish() explicitly at the end, but if you don't it will
 ///     // be called automatically when the group is dropped.
 ///     group.finish();
@@ -46,13 +46,13 @@ use std::time::Duration;
 ///                 |b, (p_x, p_y)| b.iter(|| p_x * p_y));
 ///         }
 ///     }
-///    
+///
 ///     group.finish();
 /// }
 ///
 /// fn bench_throughput(c: &mut Criterion) {
 ///     let mut group = c.benchmark_group("Summation");
-///     
+///
 ///     for size in [1024, 2048, 4096].iter() {
 ///         // Generate input of an appropriate size...
 ///         let input = vec![1u64, *size];
@@ -95,7 +95,7 @@ impl<'a, M: Measurement> BenchmarkGroup<'a, M> {
     ///
     /// Panics if n < 10.
     pub fn sample_size(&mut self, n: usize) -> &mut Self {
-        assert!(n >= 10);
+        //assert!(n >= 10);
 
         self.partial_config.sample_size = Some(n);
         self
